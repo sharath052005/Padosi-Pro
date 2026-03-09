@@ -1,0 +1,48 @@
+import { useState, useEffect } from 'react'
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    setMenuOpen(false)
+  }
+
+  return (
+    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+      <div className="navbar__inner">
+        <div className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <span className="logo-icon">✦</span>
+          <span className="logo-text">Padosi<strong>Pro</strong></span>
+        </div>
+
+        <button
+          className={`navbar__hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span /><span /><span />
+        </button>
+
+        <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
+          <button onClick={() => scrollTo('services')} className="nav-link">Our Services</button>
+          <button onClick={() => scrollTo('process')} className="nav-link">Our Process</button>
+          <button onClick={() => scrollTo('about')} className="nav-link">About Us</button>
+          <button onClick={() => scrollTo('contact')} className="nav-link">Contact</button>
+        </div>
+
+        <div className={`navbar__actions ${menuOpen ? 'navbar__actions--open' : ''}`}>
+          <button className="btn-ghost">Login</button>
+          <button className="btn-primary">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+  )
+}
