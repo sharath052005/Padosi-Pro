@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
 export default function Navbar() {
@@ -19,6 +20,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
+
         <div className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <img src={logo} alt="Padosi Pro" className="navbar__logo-img" />
           <span className="logo-text">Padosi<strong>Pro</strong></span>
@@ -39,10 +41,11 @@ export default function Navbar() {
           <button onClick={() => scrollTo('contact')} className="nav-link">Contact</button>
         </div>
 
-        <div className={`navbar__actions ${menuOpen ? 'navbar__actions--open' : ''}`}>
-          <button className="btn-ghost">Login</button>
-          <button className="btn-primary">Sign Up</button>
+        <div className="navbar__actions">
+          <Link to="/login" className="btn-ghost">Login</Link>
+          <Link to="/signup" className="btn-primary">Sign Up</Link>
         </div>
+
       </div>
     </nav>
   )

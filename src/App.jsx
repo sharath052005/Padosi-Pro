@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -5,11 +6,12 @@ import Process from './components/Process'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Login from './pages/Login'
 import './App.css'
 
-export default function App() {
+function HomePage() {
   return (
-    <div className="app">
+    <>
       <Navbar />
       <main>
         <Hero />
@@ -19,6 +21,27 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
+  )
+}
+
+function LoginPage() {
+  return (
+    <>
+      <Navbar />
+      <Login />
+      <Footer />
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
