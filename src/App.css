@@ -180,6 +180,12 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
   cursor: pointer; flex-shrink: 0;
 }
 
+.navbar__logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
 .navbar__links {
   display: flex;
   align-items: center;

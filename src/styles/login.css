@@ -1,0 +1,210 @@
+/* ============================================================
+   LOGIN PAGE — Login.css
+   ============================================================ */
+
+.login-page {
+  min-height: 100vh;
+  background: #eef7f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.login-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 40px rgba(2, 44, 34, 0.1);
+  border: 1px solid #e8edeb;
+}
+
+/* Logo */
+.login-card__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.login-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Header */
+.login-card__header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.login-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0d1f1c;
+  margin-bottom: 6px;
+}
+.login-card__subtitle {
+  font-size: 0.92rem;
+  color: #7a9490;
+}
+
+/* Google SSO Button */
+.login-sso-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border: 1.5px solid #e8edeb;
+  border-radius: 12px;
+  background: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0d1f1c;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  margin-bottom: 8px;
+}
+.login-sso-btn:hover {
+  border-color: #022C22;
+  background: #f8faf9;
+  box-shadow: 0 2px 12px rgba(2, 44, 34, 0.08);
+}
+
+/* Divider */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: #b0bdb9;
+  font-size: 0.82rem;
+}
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e8edeb;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.login-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.login-form__label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-form__label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0d1f1c;
+}
+.login-forgot {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #022C22;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: color 0.2s;
+}
+.login-forgot:hover { color: #055c40; text-decoration: underline; }
+
+.login-form__input-wrap {
+  position: relative;
+}
+.login-form__input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #e8edeb;
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #0d1f1c;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.login-form__input:focus {
+  border-color: #022C22;
+  box-shadow: 0 0 0 3px rgba(2, 44, 34, 0.1);
+}
+.login-form__input::placeholder { color: #b0bdb9; }
+
+.login-form__eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  color: #7a9490;
+}
+
+/* Submit Button */
+.login-submit {
+  width: 100%;
+  padding: 15px;
+  background: #022C22;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  margin-top: 4px;
+}
+.login-submit:hover {
+  background: #055c40;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 44, 34, 0.28);
+}
+.login-submit:active { transform: translateY(0); }
+
+/* Footer */
+.login-card__footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: #7a9490;
+}
+.login-card__signup {
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #022C22;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.login-card__signup:hover { color: #055c40; text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-card { padding: 28px 20px; }
+  .login-card__title { font-size: 1.6rem; }
+}
