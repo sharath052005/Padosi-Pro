@@ -21,10 +21,10 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
 
-        <div className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <Link to="/" className="navbar__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <img src={logo} alt="Padosi Pro" className="navbar__logo-img" />
           <span className="logo-text">Padosi<strong>Pro</strong></span>
-        </div>
+        </Link>
 
         <button
           className={`navbar__hamburger ${menuOpen ? 'open' : ''}`}
