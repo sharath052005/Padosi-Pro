@@ -7,6 +7,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Login from './pages/Login'
+import Signup from './pages/SignUp'
 import './App.css'
 
 function HomePage() {
@@ -35,12 +36,23 @@ function LoginPage() {
   )
 }
 
+function SignupPage() {
+  return (
+    <>
+      <Navbar />
+      <Signup />
+      <Footer />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
     </BrowserRouter>
   )

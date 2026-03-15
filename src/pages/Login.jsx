@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import logo from '../assets/logo.png'
+import { Link, useNavigate } from 'react-router-dom'
 import '../styles/login.css'
 
 export default function Login() {
   const [form, setForm] = useState({ email: '', password: '' })
   const [showPassword, setShowPassword] = useState(false)
-
+  const navigate = useNavigate()
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
   const handleSubmit = (e) => {
@@ -106,7 +107,7 @@ export default function Login() {
         {/* Footer */}
         <p className="login-card__footer">
           Don't have an account?{' '}
-          <button className="login-card__signup">Create Account</button>
+          <button className="login-card__signup" onClick={() => navigate('/signup')}>Create Account</button>
         </p>
 
       </div>
