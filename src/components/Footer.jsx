@@ -1,3 +1,5 @@
+import logo from '../assets/logo.png'
+
 export default function Footer() {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
@@ -6,7 +8,7 @@ export default function Footer() {
       <div className="footer__top">
         <div className="footer__brand">
           <div className="footer__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <span className="logo-icon">✦</span>
+            <img src={logo} alt="Padosi Pro" className="navbar__logo-img" />
             <span className="logo-text">Padosi<strong>Pro</strong></span>
           </div>
           <p className="footer__tagline">Making everyday life easier<br />for busy households.</p>
