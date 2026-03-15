@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import logo from '../assets/logo.png'
-import '../styles/Login.css'
+import '../styles/login.css'
 
 export default function Login() {
   const [form, setForm] = useState({ email: '', password: '' })
