@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
-import '../styles/Signup.css'
+import '../styles/SignUp.css'
 
 const roles = [
   {
